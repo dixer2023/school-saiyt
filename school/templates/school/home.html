@@ -1,0 +1,23 @@
+{% extends 'school/base.html' %}
+
+{% block title %}Головна | Ліцей №223{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <p class="eyebrow">Навчальний простір нового рівня</p>
+    <h1>Школа, де знання стають впевненістю</h1>
+    <div class="hero-actions">
+        <a class="btn btn-primary" href="{% url 'teachers' %}">Наші вчителі</a>
+        <a class="btn btn-secondary" href="{% url 'events' %}">Найближчі події</a>
+    </div>
+</section>
+
+<section class="grid-cards stagger-list">
+    {% for item in highlights %}
+    <article class="card">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.text }}</p>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

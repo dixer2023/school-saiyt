@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ліцей №223{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'school/styles.css' %}">
+</head>
+<body>
+    <div class="background-shape background-shape-left"></div>
+    <div class="background-shape background-shape-right"></div>
+
+    <header class="site-header">
+        <a href="{% url 'home' %}" class="logo">Ліцей №223</a>
+        <nav class="site-nav">
+            <a href="{% url 'home' %}">Головна</a>
+            <a href="{% url 'teachers' %}">Вчителі</a>
+            <a href="{% url 'events' %}">Події</a>
+        </nav>
+    </header>
+
+    <main class="content-wrapper fade-in">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Ліцей №223</p>
+    </footer>
+</body>
+</html>

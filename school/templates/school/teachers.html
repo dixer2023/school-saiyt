@@ -1,0 +1,19 @@
+{% extends 'school/base.html' %}
+
+{% block title %}Вчителі | Ліцей №223{% endblock %}
+
+{% block content %}
+<section class="section-head">
+    <p class="eyebrow">Педагогічна команда</p>
+    <h1>Вчителі, які надихають</h1>
+</section>
+
+<section class="grid-cards stagger-list">
+    {% for teacher in teachers %}
+    <article class="card teacher-card">
+        <h2>{{ teacher.name }}</h2>
+        <p><strong>Предмет:</strong> {{ teacher.subject }}</p>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

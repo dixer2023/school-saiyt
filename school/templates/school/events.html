@@ -1,0 +1,20 @@
+{% extends 'school/base.html' %}
+
+{% block title %}Події | Ліцей №223{% endblock %}
+
+{% block content %}
+<section class="section-head">
+    <p class="eyebrow">Календар активностей</p>
+    <h1>Найближчі шкільні події</h1>
+</section>
+
+<section class="timeline stagger-list">
+    {% for event in events %}
+    <article class="timeline-item">
+        <p class="event-date">{{ event.date }}</p>
+        <h2>{{ event.title }}</h2>
+        <p>{{ event.description }}</p>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}
